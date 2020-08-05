@@ -1,0 +1,52 @@
+
+
+import com.example.demo.Employee;
+
+import java.lang.reflect.Array;
+import java.util.HashMap;
+import java.util.List;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.stream.Collectors;
+
+public class Itests{
+
+    class Object{
+        int ID;
+        String name;
+
+        @Override
+        public int hashCode(){
+
+            int code = (this.ID*4)/2;
+            return code;
+        }
+
+    }
+
+    public static void filterDuplicates(ArrayList<Object> values){
+
+        HashMap<Object,Integer> result = new HashMap<>();
+
+        values.stream().filter((x)->{
+            if(result.containsKey(x.ID))
+                continue;
+            else
+                result.put(x.ID,x);
+        }).forEach(System.out.println(x));
+    }
+
+    public static void main(String[] args){
+
+        //filter ids with salaray>10000
+
+
+        Employees.stream().filter((x)->x.salary>10000).collect(Collectors.groupingBy(ID));
+
+
+
+        List<Object> Employees = new ArrayList<>();
+        filterDuplicates(values);
+    }
+
+}
