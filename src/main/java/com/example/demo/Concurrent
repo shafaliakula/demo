@@ -1,0 +1,15 @@
+package com.example.demo;
+
+import java.lang.Runnable;
+
+public class Concurrent extends Thread{
+
+    public void run(){
+        System.out.println("Thread is running");
+    }
+
+    public static void main(String[] args){
+        Thread t1 = new Thread(new Concurrent());
+        t1.start();
+    }
+}
